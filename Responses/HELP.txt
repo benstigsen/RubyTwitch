@@ -1,0 +1,1 @@
+In this folder you add your commands as text files. So if someone in chat types "!about" the about.txt file will be opened with a custom response.
