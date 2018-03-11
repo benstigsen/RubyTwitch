@@ -1,4 +1,4 @@
 pong USER!
 
-# (USER and CHANNEL can be used and will be automatically be replaced when sent to chat)
+# (USER and CHANNEL can be used and will automatically be replaced when sent to chat)
 # So you could have, "Hello USER, welcome to CHANNEL" and it will correct it to the corresponding variables.
