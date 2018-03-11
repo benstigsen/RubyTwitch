@@ -39,9 +39,9 @@ message_count = 0
 message_limit = Time.now.to_i
 
 # Commands
-commands = ["!about","!uptime","!commands","!cortexio","!followed"] # Add commands here
-api_commands = ["!followed","!uptime"]
-admin_commands = ["!disconnect"]
+commands = ["!examplecommand","!ping"] # Add commands here
+api_commands = ["!followed","!uptime"] # API commands here
+admin_commands = ["!disconnect"] # Channel owner commands here
 
 # Authorization Login
 socket.puts("PASS #{OAUTH}")					# Send the password(oauth) to Twitch
