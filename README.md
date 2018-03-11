@@ -20,4 +20,4 @@ But as you can see in the preview image it's also able to handle custom commands
 
 **Adding Commands:**
 1. Open **"TwitchBot.rb"** and go to line 42-44, add your commands.
-2. If you're adding commands to the `commands` array, go to folder **"Responses"** and the command as a text file in all lowercase. _Examples have been included in template_ 
+2. If you're adding commands to the `commands` array, go to folder **"Responses"** and add the command as a text file in all lowercase. _Examples have been included_ 
