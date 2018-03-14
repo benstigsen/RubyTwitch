@@ -67,6 +67,17 @@ Thread.start do
 		
 		ready[0].each do |s|
 			line = s.gets
+			# Respond to Twitch IRC "PING" Message
+			if line.index("PING") == 0
+				line.strip!
+				socket.puts("PONG :tmi.twitch.tv\r\n")
+				log.info("[IRC Message]: " + line)
+				log.info("[IRC Response]: PONG :tmi.twitch.tv")
+				puts("-".bold.red*line.length)
+				puts "[Twitch] ".bold.cyan + "IRC:  ".bold.yellow + line.bold.green
+				puts "[Response] ".bold.cyan + "IRC: ".bold.yellow + "PONG :tmi.twitch.tv".bold.green
+				puts("-".bold.red*line.length)
+			end
 			match = line.match(/^:(.+)!(.+)PRIVMSG ##{CHANNEL} :(.+)$/)
 			message = match && match[3]
 			if message =~ /^/
