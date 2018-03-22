@@ -1,5 +1,5 @@
-# RubyTwitchChatBot
-A simple chatbot for Twitch. Used for handling commands and previewing chat.
+# TwitchChatBot
+A simple chatbot for Twitch written in Ruby. Used for handling commands and previewing chat so that you don't need to have the browser open and can avoid using a lot of RAM and CPU.
 
 ----
 
