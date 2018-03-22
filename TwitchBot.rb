@@ -74,8 +74,7 @@ Thread.start do
 				log.info("[IRC Message]: " + line)
 				log.info("[IRC Response]: PONG :tmi.twitch.tv")
 				puts("-".bold.red*line.length)
-				puts "[Twitch] ".bold.cyan + "IRC:  ".bold.yellow + line.bold.green
-				puts "[Response] ".bold.cyan + "IRC: ".bold.yellow + "PONG :tmi.twitch.tv".bold.green
+				puts "[Twitch] ".bold.cyan + "IRC: ".bold.yellow + line.bold.green
 				puts("-".bold.red*line.length)
 			end
 			match = line.match(/^:(.+)!(.+)PRIVMSG ##{CHANNEL} :(.+)$/)
