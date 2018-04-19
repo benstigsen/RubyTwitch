@@ -1,1 +1,1 @@
-List of available commands: COMMANDS
+List of available commands on this channel (CHANNEL): COMMANDS - Look in the commands.txt file, writing channel, user, commands capitalized will be replaced with the matching values in CommandsHandler.rb. Look for yourself!
