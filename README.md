@@ -4,7 +4,7 @@ A simple chatbot for Twitch written in Ruby. Used for handling commands and prev
 ----
 
 ## Preview
-![alt text](https://i.imgur.com/VrAybD8.png "Preview of the chat bot")
+![alt text](https://imgur.com/a/caDmuaG "Preview of the chat bot")
 
 ----
 
@@ -19,5 +19,17 @@ But as you can see in the preview image it's also able to handle custom commands
 
 
 **Adding Commands:**
-1. Open **"TwitchBot.rb"** and go to line 42-44, add your commands.
-2. If you're adding commands to the `commands` array, go to folder **"Responses"** and add the command as a text file in all lowercase. _Examples have been included_ 
+1. Open **"CommandsHandler.rb"** and scroll down to the `commands` array and add your own.
+2. Go to folder **"Responses"** and add the command as a text file in all lowercase. _Examples have been included_
+
+_If you are adding admin commands add a custom response next to it. There you'll be able to add commands that gives data to the socket instead of a chat message as a response. Example:  
+    `admin_commands = {
+		"disconnect" => "PART ##{CHANNEL}"
+		}`  
+When the command `"!disconnect"` has been typed in chat ("!" is the default prefix but can be changed) by the channel owner it will send a request to disconnect from the current Twitch channel._  
+  
+**Extras:**
+The response files in the Responses folder have 3 arguments available (You can add your own)
+![alt text](https://imgur.com/gallery/6gOrmQY "Preview of command arguments")
+
+In the template the arguments USER, CHANNEL, COMMANDS are available. _(COMMANDS shows all available commands)_
