@@ -140,7 +140,6 @@ end
 def Clear()
 	system "clear" or system "cls"
 	puts "Type \"clear\" to clear terminal"
-	puts "Type \"project <text>\" to write to project file"
 	puts "Type \"disconnect\" to disconnect"
 	puts ""
 end
