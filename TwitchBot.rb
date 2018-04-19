@@ -87,10 +87,7 @@ end
 while (running) do
 	input = gets.chomp
 	if input == "clear"
-		Clear()
-
-	elsif input.index("project") == 0
-		Project(input)
+		Clear() # Clear console
 
 	elsif input == "disconnect"
 		socket.puts("PRIVMSG ##{CHANNEL} : Disconnected BibleThump")
