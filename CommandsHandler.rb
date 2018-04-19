@@ -17,9 +17,7 @@ def HandleCommands(line)
 
 	commands = [
 		"commands",
-		"cortexio",
-		"about",
-		"project",]
+		"chatbot",]
 
 	replacements = [ 
 		["USER", "@#{user}"], 
@@ -138,11 +136,6 @@ end
 
 
 # ----- CONSOLE COMMANDS ----- #
-def Project(line)
-	line.slice!("project ")
-	File.write("Responses/project.txt", line)
-end
-
 def Clear()
 	system "clear" or system "cls"
 	puts "Type \"clear\" to clear terminal"
