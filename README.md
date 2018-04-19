@@ -40,4 +40,4 @@ _**The response files in the Responses folder have 3 arguments available**_ (You
 
 In the template the arguments USER, CHANNEL, COMMANDS are available. _(COMMANDS shows all available commands)_  
   
-![alt text](https://i.imgur.com/vX2XFof.png "Here you can add your replacements")  
+![alt text](https://i.imgur.com/7oRcLvw.png "Here you can add your replacements")  
