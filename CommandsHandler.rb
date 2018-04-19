@@ -7,8 +7,9 @@ def HandleCommands(line)
 	# moderators = 100 messages (within a 30 second window)
 	# default = 20 messages (within a 30 second window)
 	# max_messages is set to 80 just to keep it safe
-
-	user = ""
+	
+	user = "" # Required (Avoid "undefined local variable or method `user'")
+	
 	prefix = "!"
 
 	admin_commands = {
