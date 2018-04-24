@@ -17,12 +17,14 @@ But as you can see in the preview image it's also able to handle custom commands
 1. Open **"credentials.txt"** and replace OAUTH, BOTNAME and CHANNEL with the values you need.
 2. Run **"TwitchBot.rb"**
 
+----  
 
-**Adding Commands:**  
+## **Adding Commands:**  
+### **Regular Commands:**  
 1. Open **"CommandsHandler.rb"** and scroll down to the `commands` array and add your own.
 2. Go to folder **"Responses"** and add the command as a text file in all lowercase. _Examples have been included_  
 
-**Admin Commands:**  
+### **Admin Commands:**  
 If you are adding admin commands add a custom response next to it. There you'll be able to add commands that gives data to the socket instead of a chat message as a response. Example:  
     `admin_commands = {
 		"disconnect" => "PART ##{CHANNEL}"
@@ -32,7 +34,7 @@ When the command `"!disconnect"` has been typed in chat by the channel owner _(o
   
 ![alt text](https://i.imgur.com/iYtSvaG.png "Prefix, commands and admin commands")  
   
-**API Commands:**  
+### **API Commands:**  
 If you want to add API commands you just scroll down to `# ----- API COMMANDS ----- #` _(First section after receiving messages)_ and add your commands. In the example it calls some functions which are made at the bottom of the script.  
 ![alt text](https://i.imgur.com/CBF7vYf.png "Right after the received messages section")  
   
