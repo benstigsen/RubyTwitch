@@ -13,31 +13,31 @@ But as you can see in the preview image it's also able to handle custom commands
 
 ----
 
-## How To Use:
+## How To Use:  
 1. Open **"credentials.txt"** and replace OAUTH, BOTNAME and CHANNEL with the values you need.
 2. Run **"TwitchBot.rb"**
 
 
-**Adding Commands:**
+**Adding Commands:**  
 1. Open **"CommandsHandler.rb"** and scroll down to the `commands` array and add your own.
 2. Go to folder **"Responses"** and add the command as a text file in all lowercase. _Examples have been included_  
 
-**Admin Commands:**
+**Admin Commands:**  
 If you are adding admin commands add a custom response next to it. There you'll be able to add commands that gives data to the socket instead of a chat message as a response. Example:  
     `admin_commands = {
 		"disconnect" => "PART ##{CHANNEL}"
 		}`  
   
-When the command `"!disconnect"` has been typed in chat by the channel owner _(or anyone specified in the `admins` array)_ it will send a request to disconnect from the current Twitch channel._   
+When the command `"!disconnect"` has been typed in chat by the channel owner _(or anyone specified in the `admins` array)_ it will send a request to disconnect from the current Twitch channel.   
   
 ![alt text](https://i.imgur.com/iYtSvaG.png "Prefix, commands and admin commands")  
   
-**API Commands:**
-If you want to add API commands you just scroll down to `# ----- API COMMANDS ----- #` _(First section after receiving messages)_ and add your commands. In the example it calls some functions which are made at the bottom of the script.
+**API Commands:**  
+If you want to add API commands you just scroll down to `# ----- API COMMANDS ----- #` _(First section after receiving messages)_ and add your commands. In the example it calls some functions which are made at the bottom of the script.  
 ![alt text](https://i.imgur.com/CBF7vYf.png "Right after the received messages section")  
   
 Then you scroll down to the bottom under `# ----- API COMMANDS ----- #` and add a function to that command.  
-![alt text](https://i.imgur.com/CBF7vYf.png "Here you add your dedicated function for the API command")  
+![alt text](https://i.imgur.com/xejccqp.png "Here you add your dedicated function for the API command")  
 
 ----
 
