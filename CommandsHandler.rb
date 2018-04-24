@@ -145,6 +145,8 @@ def Followed(user)
 			response = "#{user} has been following #{CHANNEL} for " + response
 		end
 		response = "PRIVMSG ##{CHANNEL} :" + response
+	else
+		puts("[Command] ".bold.red + "#{user}: ".bold + "(YOU CAN'T FOLLOW YOURSELF)".bold.red)
 	end
 
 	log_msg = "[Command] #{user}: !followed"
