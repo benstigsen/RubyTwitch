@@ -20,6 +20,10 @@ def HandleCommands(line)
 		"commands",
 		"chatbot",]
 
+	if commands.length > 0
+		commands.map! { |command| prefix + command } # apply prefix to all commands
+	end
+	
 	replacements = [ 
 		["USER", "@#{user}"], 
 		["CHANNEL", "#{CHANNEL}"],
@@ -50,7 +54,7 @@ def HandleCommands(line)
 					# ----- ADMIN COMMANDS ----- #
 					if user == CHANNEL
 						admin_commands.each do |command, value|
-							if message.include?(prefix + command)
+							if message.include?(command)
 								return value + "\r\n"
 							end
 						end
@@ -58,7 +62,8 @@ def HandleCommands(line)
 
 					# ----- COMMANDS ----- #
 					commands.each do |command|
-						if message.include?(prefix + command)
+						if message.include?(command)
+							command.tr!("!", "") # Remove "!"
 							file = open("Responses/" + command + ".txt")
 							response = file.read
 							file.close
