@@ -8,9 +8,14 @@ def HandleCommands(line)
 	# default = 20 messages (within a 30 second window)
 	# max_messages is set to 80 just to keep it safe
 	
-	user = "" # Required (Avoid "undefined local variable or method `user'")
+	user = "" # Required to (Avoid "undefined local variable or method `user'")
 	
 	prefix = "!"
+	
+	admins = [
+		#"exampleuser1_inlowercase",
+		#"exampleuser2_inlowercase"
+	]
 
 	admin_commands = {
 		#"example" => "raw socket message"
@@ -20,8 +25,14 @@ def HandleCommands(line)
 		"commands",
 		"chatbot",]
 
+	if admin_commands.length > 0
+		admin_commands = admin_commands.map {|command, value| [prefix + command, value]}.to_h
+		# Add prefix to all admin commands
+	end
+	
 	if commands.length > 0
-		commands.map! { |command| prefix + command } # apply prefix to all commands
+		commands.map! { |command| prefix + command }
+		# Add prefix to all commands
 	end
 	
 	replacements = [ 
@@ -34,10 +45,10 @@ def HandleCommands(line)
 		response = Ping(line)
 	else
 		match = line.match(/^:(.+)!(.+)PRIVMSG ##{CHANNEL} :(.+)$/)
-		message = match && match[3]
-		if message =~ /^/
-			message.strip!
-			message.downcase!
+		original_message = match && match[3]
+		if original_message =~ /^/
+			original_message.strip!
+			message = original_message.downcase!
 			user = match[1]	# Get username
 
 			if message
@@ -52,7 +63,7 @@ def HandleCommands(line)
 					end
 
 					# ----- ADMIN COMMANDS ----- #
-					if user == CHANNEL
+					if user == CHANNEL or admins.include?(user)
 						admin_commands.each do |command, value|
 							if message.include?(command)
 								return value + "\r\n"
@@ -86,15 +97,15 @@ def HandleCommands(line)
 
 					if response and message_count < max_messages
 						replacements.each {|replacement| response.gsub!(replacement[0], replacement[1])}
-						puts("[Command] ".bold.cyan + "#{user}: ".bold + "#{message}".bold.cyan)
-						log_msg = "[Command] #{user}: " + message
+						puts("[Command] ".bold.cyan + "#{user}: ".bold + "#{original_message}".bold.cyan)
+						log_msg = "[Command] #{user}: " + original_message
 						return response, log_msg
 					else
-						puts("[Command] ".bold.red + "#{user}: ".bold + "#{message}".bold.red)
+						puts("[Command] ".bold.red + "#{user}: ".bold + "#{original_message}".bold.red)
 					end
 				else
-					puts("[Message] ".bold.green + "#{user}: ".bold + "#{message}".bold.green)
-					log_msg = "[Message] #{user}: " + message
+					puts("[Message] ".bold.green + "#{user}: ".bold + "#{original_message}".bold.green)
+					log_msg = "[Message] #{user}: " + original_message
 					return nil, log_msg
 				end
 			end
