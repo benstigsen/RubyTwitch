@@ -1,5 +1,3 @@
-# This is a simple test to see if the commit worked.
-
 # Message formatting in console
 class String
 	def red;            "\e[31m#{self}\e[0m" end
