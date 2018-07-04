@@ -5,6 +5,7 @@ A simple chatbot for Twitch written in Ruby. Used for handling commands and prev
 
 ## Preview
 ![alt text](https://i.imgur.com/QOuqtfS.png "Preview of the chat bot")
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FBenTearzz%2FRubyTwitchChatbot.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2FBenTearzz%2FRubyTwitchChatbot?ref=badge_shield)
 
 ----
 
@@ -51,3 +52,7 @@ _**The response files in the Responses folder have 3 arguments available**_ (You
 In the template the arguments USER, CHANNEL, COMMANDS are available. _(COMMANDS shows all available commands)_  
   
 ![alt text](https://i.imgur.com/7oRcLvw.png "Here you can add your replacements")  
+
+
+## License
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FBenTearzz%2FRubyTwitchChatbot.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2FBenTearzz%2FRubyTwitchChatbot?ref=badge_large)
