@@ -16,10 +16,8 @@ channel
 
 ### To-Do
 
-- [ ] Add ban protection
+- [ ] Add rate limit
 
-- [ ] Add API commands
+- [x] Add API commands
 
-- [ ] Add response loading from files
-
-
+- [x] Add response loading from files
