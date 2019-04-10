@@ -16,7 +16,7 @@ channel
 
 ### To-Do
 
-- [x] Add rate limit
+- [x] Add delay between requests
 
 - [x] Add API commands
 

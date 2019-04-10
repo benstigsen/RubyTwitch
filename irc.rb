@@ -1,3 +1,4 @@
+# Initiate Socket
 def init_socket
 	require("socket")
 
@@ -7,6 +8,7 @@ def init_socket
 	$messages = Array.new
 end
 
+# Initiate Response Queue
 def init_msg_thread()
 	Thread.new do
 		while true
@@ -14,18 +16,20 @@ def init_msg_thread()
 				send_msg($messages.shift)
 			end
 
-			sleep(2)
+			sleep(2) # Let's you send a max of 30 requests every 60 seconds
 			# DecAPI rate limit: 100 messages per 60 seconds
 			# Twitch rate limit: 100 messages per 30 seconds
 		end
 	end
 end
 
+# Send chat message
 def send_msg(data)
 	# puts("[SENDMSG] #{data}")
 	$socket.puts("PRIVMSG ##{$channel} :#{data}\r\n")
 end
 
+# Send raw data
 def send_raw(data)
 	# puts("[SENDRAW] #{data}")
 	$socket.puts("#{data}\r\n")
