@@ -5,6 +5,7 @@ require_relative("local_commands.rb")
 #require_relative("configurator.rb")
 
 init_socket
+init_msg_thread
 
 # Authorization Login
 send_raw("PASS #{$oauth}")		# Send the password(oauth) to Twitch

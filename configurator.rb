@@ -1,4 +1,5 @@
 $prefix = "!"
+$max_responses = 10	# How many responses to store in array
 
 # Initialize Logger
 def init_logger(clear_previous: true)

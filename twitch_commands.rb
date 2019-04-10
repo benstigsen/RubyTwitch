@@ -1,4 +1,4 @@
-require 'open-uri'
+require("open-uri")
 require_relative("configurator.rb")
 
 def twitch_command(user, command)
@@ -28,8 +28,8 @@ def twitch_command(user, command)
 
 	# Send chat message if there is a response
 	if response != nil
+		$messages.push(response)
 		puts("#{" " * (10 + user.length + 1)} #{"\\------".bold.blue}: #{response.yellow}")
-		send_msg(response)
 	end
 end
 
